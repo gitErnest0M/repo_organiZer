@@ -17,11 +17,19 @@ class CalendarioActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_calendario)
 
+        // transición a layout crearTareaActivity
         val irCrear : Button = findViewById(R.id.bt_irCrearActividad)
         irCrear.setOnClickListener{
             val intent: Intent = Intent(this, crearTareaActivity::class.java)
             startActivity(intent)
         }
+
+        /* transición a layout CalendatioActivity bt_irCrearActividad
+        val sigCalendario : Button = findViewById(R.id.bt_irCAlendario)
+        sigCalendario.setOnClickListener{
+            val intent: Intent = Intent(this, CalendarioActivity::class.java)
+            startActivity(intent)
+        }*/
 
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->

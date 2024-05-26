@@ -1,8 +1,13 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.OrganiZer_v5" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
+        <!-- Customize your light theme here.
+         Agregue lo básico de la toolbar y button-->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name ="colorPrimary">@color/colorPrimary</item>
+        <item name ="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name ="colorAccent">@color/colorAccent</item>
+        <item name ="colorSecondary">@color/colorSecondary</item>
     </style>
 
     <style name="Theme.OrganiZer_v5" parent="Base.Theme.OrganiZer_v5" />

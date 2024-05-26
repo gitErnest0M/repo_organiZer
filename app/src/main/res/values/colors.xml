@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- color del logo:
+    primario bfdb3b, situaciones oscuras c7d586, color llamativo #97ceb5
+    color más ocuro #697e78 y gris #a7a7a7-->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="colorPrimary">#bfdb3b</color>
+    <color name="colorPrimaryDark">#c7d586</color>
+    <color name="colorAccent">#97ceb5</color>
+    <color name="colorSecondary">#6c867b</color>
 </resources>
