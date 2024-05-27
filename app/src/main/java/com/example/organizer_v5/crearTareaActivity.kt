@@ -1,16 +1,20 @@
 package com.example.organizer_v5
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.DatePicker
 import android.widget.EditText
 import android.widget.ImageButton
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import clases.Utilidades
+import dto.Actividad
 
 class crearTareaActivity : AppCompatActivity() {
     var editTxt:EditText?=null
@@ -20,22 +24,35 @@ class crearTareaActivity : AppCompatActivity() {
     var dpFecha:DatePicker?=null
     var fechaSeleccionada:String?=null
     var nombreActividad:EditText?=null
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_crear_tarea)
 
+        val regresar : Button = findViewById(R.id.bt_regresar)
+        regresar.setOnClickListener{
+            val intent: Intent = Intent(this, CalendarioActivity::class.java)
+            startActivity(intent)
+        }
+
+        /**
+         * se llaman los valores de los botones y campos de texto
+         **/
         btnGuardar= findViewById(R.id.btnGuardar)
         editTxt = findViewById(R.id.nuevaActividadTxt)
         ingresarTareaTxt = findViewById(R.id.ingresarTareaTxt)
         btnFecha = findViewById(R.id.btnFecha)
         dpFecha = findViewById(R.id.dpFecha)
-       nombreActividad= findViewById(R.id.ingresarTareaTxt)
+        nombreActividad= findViewById(R.id.ingresarTareaTxt)
 
 
         editTxt?.setText(getDatePickerFecha())
 
+        /**
+         * se obtinen las datos del datepicker
+         **/
         dpFecha?.setOnDateChangedListener{
             dpFecha,anio,mes,dia->
             editTxt?.setText(getDatePickerFecha())
@@ -64,14 +81,13 @@ class crearTareaActivity : AppCompatActivity() {
 
     fun mostrarCalendario(view:View){
         dpFecha?.visibility= View.VISIBLE
-
     }
 
     fun crearEvento(view: View) {
-        println("entro al dar click en boton guardar")
+        val util = Utilidades()
         var nombActivGuardar:String=nombreActividad?.text.toString()
-        println(fechaSeleccionada)
-        println(nombActivGuardar)
-
+        val activ= Actividad(nombActivGuardar , fechaSeleccionada)
+        util.llenarLista(activ)
+        Toast.makeText(this, "La Tarea " + activ.nombreActividad + " ha sido creada satisfactoriamente", Toast.LENGTH_SHORT).show()
     }
 }

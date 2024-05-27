@@ -60,6 +60,17 @@
         app:layout_constraintVertical_bias="0.107"
         app:srcCompat="@android:drawable/ic_menu_today" />
 
+    <Button
+        android:id="@+id/bt_regresar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="680dp"
+        android:text="Regresar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <DatePicker
         android:id="@+id/dpFecha"
         android:layout_width="350dp"
