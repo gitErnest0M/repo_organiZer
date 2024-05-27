@@ -38,7 +38,7 @@ class crearTareaActivity : AppCompatActivity() {
         }
 
         /**
-         * se llaman los valores de los botones y campos de texto
+         * Se llama a valores de los botones y campos de texto
          **/
         btnGuardar= findViewById(R.id.btnGuardar)
         editTxt = findViewById(R.id.nuevaActividadTxt)
@@ -51,7 +51,7 @@ class crearTareaActivity : AppCompatActivity() {
         editTxt?.setText(getDatePickerFecha())
 
         /**
-         * se obtinen las datos del datepicker
+         * Se obtiene datos del datepicker
          **/
         dpFecha?.setOnDateChangedListener{
             dpFecha,anio,mes,dia->
