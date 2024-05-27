@@ -38,6 +38,6 @@ class Utilidades {
         private val listaTareas: MutableList<Actividad> = ArrayList()
         private val listaFinal: MutableList<String> = ArrayList()
         private val  usuario :String = "Admin"
-        private val  contrasena :String = "12345"
+        private val  contrasena :String = "123"
     }
 }
