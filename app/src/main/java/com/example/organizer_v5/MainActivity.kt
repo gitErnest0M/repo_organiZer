@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -23,20 +24,28 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         /**
-         * validacion de login
-         * **/
+         * Validación del login (con usuario previo asignado) capturado desde layout
+         * */
         usuario = findViewById(R.id.usuario)
         contrasena = findViewById(R.id.contrasena)
-
-
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-    }
 
+        /**
+         * Mensaje para el logo
+         * */
+        val mensajeInicial = findViewById<ImageView>(R.id.logoInicial)
+        mensajeInicial.setOnClickListener {
+            Toast.makeText(this, "Hola! Ingresa con un usuario registrado de tu Organización", Toast.LENGTH_SHORT).show()
+        }
+    }
+    /**
+     * Función para validar usuario de datos capturados
+     * */
     fun validarLogin(view: View) {
         var usuarioCapturado:String=usuario?.text.toString()
         var passwCapturado:String=contrasena?.text.toString()

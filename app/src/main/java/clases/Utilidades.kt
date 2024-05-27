@@ -37,7 +37,7 @@ class Utilidades {
     companion object {
         private val listaTareas: MutableList<Actividad> = ArrayList()
         private val listaFinal: MutableList<String> = ArrayList()
-        private val  usuario :String = "Admin"
+        private val  usuario :String = "admin"
         private val  contrasena :String = "123"
     }
 }
